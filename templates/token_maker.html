@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MintLab - Create Your Token</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.6s ease-in-out;
+        }
+        @keyframes slideDown {
+            0% { transform: translateY(-100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #ffcc00;
+        }
+        .token-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            margin: 60px auto;
+            flex: 1;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        @keyframes fadeInUp {
+            0% { transform: translateY(50%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-field {
+            margin-bottom: 15px;
+        }
+        .form-field label {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .form-field input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .form-field input:focus {
+            border-color: #ffcc00;
+            box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+            outline: none;
+        }
+        .form-field input::placeholder {
+            color: #888;
+        }
+        button {
+            padding: 12px;
+            background-color: #333;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 30px;
+        }
+        button:hover {
+            background-color: #555;
+            transform: translateY(-3px);
+        }
+        .fa-coins {
+            margin-right: 5px;
+        }
+        .footer {
+            background-color: #333;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            margin-top: auto;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">MintLab</a>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    
+    <div class="token-container">
+        <h2><i class="fas fa-coins"></i> Create Your Token</h2>
+        <form method="POST" action="{% url 'token_creator:token_maker' %}">
+            {% csrf_token %}
+            <div class="form-field">
+                <label for="token-name">Token Name</label>
+                <input type="text" id="token-name" name="token_name" placeholder="Enter token name" required>
+            </div>
+            <div class="form-field">
+                <label for="token-symbol">Token Symbol</label>
+                <input type="text" id="token-symbol" name="token_symbol" placeholder="Enter token symbol" required>
+            </div>
+            <div class="form-field">
+                <label for="token-supply">Total Supply</label>
+                <input type="number" id="token-supply" name="token_supply" placeholder="Enter total supply" required>
+            </div>
+            <button type="submit"><i class="fas fa-paper-plane"></i> Create Token</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 MintLab. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+</html>

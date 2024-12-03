@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MintLab - Empowering Small Businesses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #e0e0e0;
+            color: #2e2e2e;
+            margin: 0;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #3e3e3e;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            color: #f1f1f1;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #b0bec5;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #4e4e4e, #2e2e2e);
+            color: #e5e5e5;
+            padding: 40px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+        .hero-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        .hero-section p {
+            font-size: 1em;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .hero-section a {
+            padding: 10px 20px;
+            background-color: #b0bec5;
+            color: #2e2e2e;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .hero-section a:hover {
+            background-color: #90a4ae;
+            transform: translateY(-3px);
+        }
+        .features-section {
+            padding: 30px 20px;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .features-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #2e2e2e;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .feature {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        .feature i {
+            font-size: 2em;
+            color: #90a4ae;
+            margin-bottom: 10px;
+        }
+        .feature h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .feature p {
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        .footer {
+            background-color: #3e3e3e;
+            color: #e5e5e5;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            margin-top: auto;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .footer a {
+            color: #b0bec5;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: #90a4ae;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">MintLab</a>
+        </div>
+        <div class="nav-links">
+            <a href="{% url 'token_creator:about'%}">About</a>
+            <a href="{% url 'users:register'%}">Register</a>
+        </div>
+    </div>
+    
+    <div class="hero-section">
+        <h1>Welcome to MintLab</h1>
+        <p>Empowering small businesses to create their own crypto tokens effortlessly. Join the digital economy today!</p>
+        <a href="{% url 'users:register'%}">Get Started</a>
+    </div>
+    
+    <div class="features-section" id="features">
+        <h2>Why Choose MintLab?</h2>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-coins"></i>
+                <h3>Simple Token Creation</h3>
+                <p>Create your own cryptocurrency with just a few easy steps, tailored for small businesses.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Safe & Secure</h3>
+                <p>Our platform ensures that your tokens are protected with top-notch security, giving you peace of mind.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-chart-line"></i>
+                <h3>Boost Your Business</h3>
+                <p>Engage your customers and grow your business with your own token. The possibilities are endless!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 MintLab. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+</html>

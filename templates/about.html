@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MintLab</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: fadeInDown 0.6s ease-in-out;
+        }
+        @keyframes fadeInDown {
+            0% { transform: translateY(-100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #ffcc00;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #4e4e4e, #2e2e2e);
+            color: #e5e5e5;
+            padding: 60px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .hero-section h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .hero-section p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .content-section {
+            padding: 50px 20px;
+            background-color: #ffffff;
+            text-align: center;
+            flex: 1;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+        @keyframes fadeInUp {
+            0% { transform: translateY(100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .content-section h2 {
+            font-size: 2.5em;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+        .content-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .content-section .mission {
+            background-color: #f7f7f7;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 0.3s ease;
+            animation: slideUp 1s ease-in-out;
+        }
+        @keyframes slideUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .content-section .mission:hover {
+            transform: translateY(-10px);
+        }
+        .footer {
+            background-color: #333;
+            color: #e5e5e5;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            margin-top: auto;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">MintLab</a>
+        </div>
+        <div class="nav-links">
+            <a href="{% url 'token_creator:welcome' %}">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    
+    <div class="hero-section">
+        <h1>About MintLab</h1>
+        <p>Empowering small businesses to enter the digital economy with ease and confidence.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="mission">
+            <h2>Who We Are</h2>
+            <p>MintLab is a pioneering platform dedicated to helping small businesses make their mark in the digital economy. We believe that every business, regardless of size, deserves the opportunity to leverage blockchain technology to grow and succeed. Our easy-to-use tools and resources are tailored specifically for small enterprises, making blockchain accessible for everyone.</p>
+        </div>
+        <div class="mission">
+            <h2>Our Vision</h2>
+            <p>We envision a future where small businesses have the same opportunities as large corporations when it comes to blockchain and digital assets. MintLab aims to bridge the gap by offering accessible, user-friendly solutions that allow businesses to create, manage, and innovate without the need for extensive technical knowledge.</p>
+        </div>
+        <div class="mission">
+            <h2>How We Help</h2>
+            <p>MintLab provides a straightforward platform for creating custom cryptocurrency tokens that can be used to engage customers, reward loyalty, and promote brand growth. With our focus on simplicity, security, and reliability, we make sure that businesses can focus on what matters most—building relationships and expanding their reach.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 MintLab. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+</html>

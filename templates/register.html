@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Token Maker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #e0e0e0;
+            color: #2e2e2e;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .navbar {
+            background-color: #3e3e3e;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a {
+            color: #f1f1f1;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #b0bec5;
+        }
+        .register-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 80px 20px;
+            transform: translateY(10px);
+            animation: slideUp 0.6s ease-in-out forwards;
+        }
+        @keyframes slideUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        h2 {
+            text-align: center;
+            color: #2e2e2e;
+            margin-bottom: 15px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-field {
+            margin-bottom: 15px;
+        }
+        .form-field input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            color: #2e2e2e;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-field input:focus {
+            border-color: #b0bec5;
+            outline: none;
+            box-shadow: 0 0 8px rgba(176, 190, 197, 0.6);
+        }
+        .form-field input::placeholder {
+            color: #888;
+        }
+        button {
+            padding: 10px;
+            background-color: #3e3e3e;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #5a5a5a;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        .fa-user-plus {
+            margin-right: 5px;
+        }
+        .footer {
+            background-color: #3e3e3e;
+            color: #e5e5e5;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .footer a {
+            color: #b0bec5;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: #90a4ae;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">MintLab Platform</a>
+        </div>
+        <div class="nav-links">
+            <a href="{% url 'token_creator:welcome' %}">Home</a>
+            <a href="{% url 'token_creator:about' %}">About</a>
+        </div>
+    </div>
+    
+    <div class="register-container">
+        <h2><i class="fas fa-user-plus"></i> Register</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-field">
+                {{ form.as_p }}
+            </div>
+            <button type="submit"><i class="fas fa-paper-plane"></i> Register</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 MintLab. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+</html>
