@@ -1,9 +1,11 @@
-# 🚀 Token Creator Project
+# 🚀 MintLap Project
 
 This project is a Django-based application that allows users to create their own test tokens through a web interface. Using the Web3.py library and Infura API, the token creation process is executed on the **Sepolia Testnet**. The hash address of the created token is displayed to the user and can be tracked on Etherscan.
 
 ---
+
 ![Token Creation Interface](templates/image1.png)
+
 ## 📌 Features
 
 - **Token Creation:** Users can create their own tokens by entering the token name, symbol, total supply, and other details.
@@ -19,7 +21,7 @@ This project is a Django-based application that allows users to create their own
 - **Backend:** Django
 - **Blockchain Operations:** Web3.py
 - **Ethereum Connection:** Infura API (Sepolia Testnet)
-- **Frontend:** HTML, CSS, JavaScript (optionally Bootstrap or another framework)
+- **Frontend:** HTML, CSS
 
 ---
 
@@ -34,7 +36,7 @@ To run the project on your local machine, follow these steps:
 
 ### 2. Clone the Project
 ```bash
-git clone https://github.com/yourusername/token-creator-project.git
+git clone https://github.com/aybikedalbul/MintLab.git
 cd token-creator-project
 ```
 
@@ -48,9 +50,9 @@ pip install -r requirements.txt
 ### 4. Set Up Environment Variables
 The project requires sensitive information such as the Infura API key and Ethereum wallet details. Add these to a `.env` file:
 ```env
-INFURA_PROJECT_ID=your_infura_project_id
-WALLET_PRIVATE_KEY=your_wallet_private_key
-NETWORK=sepolia  # Sepolia Testnet
+INFURA_PROJECT_ID= **********
+WALLET_PRIVATE_KEY= *********
+NETWORK=sepolia  
 ```
 
 ### 5. Database Migrations
@@ -82,27 +84,11 @@ Then, open your browser and navigate to `http://127.0.0.1:8000/` to start using 
 4. **Track on Etherscan:**
    - Enter the hash address on [Etherscan for Sepolia](https://sepolia.etherscan.io/) to view transactions related to the token.
 
----
-
-## 📂 Project Structure
-
-```
-token-creator-project/
-├── manage.py
-├── requirements.txt
-├── .env.example
-├── token_app/
-│   ├── migrations/
-│   ├── templates/
-│   ├── views.py
-│   ├── models.py
-│   ├── utils.py  # Web3 and Infura operations are here
-│   └── urls.py
-└── README.md
-```
 
 ---
+
 ![Token Creation Interface](templates/image3.png)
+
 ## 🤝 Contributing
 
 This project is open-source. If you'd like to contribute:
@@ -124,7 +110,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 For questions or feedback about the project:
 - **Email:** aybikedalbul79@gmail.com
-- **LinkedIn:** (https://www.linkedin.com/in/aybikedalbul/)
+- **LinkedIn:** https://www.linkedin.com/in/aybikedalbul/
 
 ---
-```
