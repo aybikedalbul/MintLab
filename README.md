@@ -1,4 +1,4 @@
-# 🚀 MintLap Project
+# 🚀 MintLab Project
 
 This project is a Django-based application that allows users to create their own test tokens through a web interface. Using the Web3.py library and Infura API, the token creation process is executed on the **Sepolia Testnet**. The hash address of the created token is displayed to the user and can be tracked on Etherscan.
 
